@@ -8,7 +8,10 @@ def printf(text):
         sleep(0.03)
 
 playersOnline = randint(0, 10000)
-playerPlace = str(randint(0, playersOnline))
+playerPlace = randint(0, playersOnline)
+playerPlacePrecent = (playerPlace / playersOnline) * 100
+
+playerPlace = str(playerPlace)
 match playerPlace[-1]:
     case "1":
         playerPlace += "st"
@@ -28,6 +31,8 @@ else:
     timeGreeting = "morning"
 
 printf("Out of the %i players online today, you're in %s place." % (playersOnline, playerPlace))
+sleep(1)
+printf("\nThat means you're in the top %.0f%% of players today." % (playerPlacePrecent))
 sleep(1)
 printf("\nHow does that make you feel this " + timeGreeting + "?")
 input("\n\tEnter Emotions: ")
