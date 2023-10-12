@@ -5,7 +5,16 @@ from time import sleep
 def printf(text):
     for char in text:
         print(char, end='', flush=True)
-        sleep(0.03)
+        match char:
+            case " ":
+                sleep(0.1)
+            case ",":
+                sleep(0.5)
+            case ".":
+                sleep(1)
+            case _:
+                sleep(0.05)
+
 
 playersOnline = randint(0, 10000)
 playerPlace = str(randint(0, playersOnline))
@@ -28,8 +37,8 @@ else:
     timeGreeting = "morning"
 
 printf("Out of the %i players online today, you're in %s place." % (playersOnline, playerPlace))
-sleep(1)
 printf("\nHow does that make you feel this " + timeGreeting + "?")
+sleep(0.5)
 input("\n\tEnter Emotions: ")
 
 sleep(3)
