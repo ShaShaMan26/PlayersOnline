@@ -11,13 +11,15 @@ def printf(text):
             case ",":
                 sleep(0.5)
             case ".":
-                sleep(1)
+                sleep(1.25)
+            case "\n":
+                sleep(.75)
             case _:
-                sleep(0.05)
+                sleep(0.075)
 
 
-playersOnline = randint(0, 10000)
-playerPlace = randint(0, playersOnline)
+playersOnline = 100000
+playerPlace = 1
 playerPlacePrecent = (playerPlace / playersOnline) * 100
 
 playerPlace = str(playerPlace)
@@ -39,11 +41,9 @@ elif currentHour >= 12:
 else:
     timeGreeting = "morning"
 
-printf("Out of the %i players online today, you're in %s place." % (playersOnline, playerPlace))
-sleep(1)
-printf("\nThat means you're in the top %.0f%% of players today." % (playerPlacePrecent))
-sleep(1)
-printf("\nHow does that make you feel this " + timeGreeting + "?")
+printf("There are %i players online. You're in %s place." % (playersOnline, playerPlace))
+printf("\nThat means you're in the top %.0f%% of players this %s." % (playerPlacePrecent, timeGreeting))
+printf("\nHow does that make you feel?")
 sleep(0.5)
 input("\n\tEnter Emotions: ")
 
