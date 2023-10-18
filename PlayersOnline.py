@@ -18,8 +18,8 @@ def printf(text):
                 sleep(0.075)
 
 
-playersOnline = 100000
-playerPlace = 1
+playersOnline = randint(0, 10000)
+playerPlace = randint(0, playersOnline)
 playerPlacePrecent = (playerPlace / playersOnline) * 100
 
 playerPlace = str(playerPlace)
